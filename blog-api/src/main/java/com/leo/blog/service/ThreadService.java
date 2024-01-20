@@ -19,7 +19,7 @@ public class ThreadService {
         articleUpdate.setViewCounts(viewCounts + 1);
         LambdaUpdateWrapper<Article> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.eq(Article::getId,article.getId());
-        // 设置一个 为了再多线程的环境下  线程安全 
+        // 设置一个 为了再多线程的环境下  线程安全
         // 在修改时再查一次，如果没被修改再执行+1  类似于CAS操作 cas加自旋，加个循环就是cas
         updateWrapper.eq(Article::getViewCounts,viewCounts);
         // update article set view_count = 100 where view_count = 99 and id=11

@@ -16,7 +16,6 @@ public class UsersController {
 //      /users/currentUser
     @GetMapping ("currentUser")
     public Result currentUser(@RequestHeader("Authorization") String token){
-        System.out.println(token);
         return sysUserService.findUserByToken(token);
     }
 }
