@@ -132,8 +132,8 @@ public class LoginServiceImpl implements LoginService {
     }
 
     // 获取MD5加密后的密码，用于测试
-//    public static void main(String[] args) {
-//        String s = DigestUtils.md5Hex("admin" + slat);
-//        System.out.println(s);
-//    }
+    public static void main(String[] args) {
+        String s = DigestUtils.md5Hex("admin" + slat);
+        System.out.println(s);
+    }
 }
